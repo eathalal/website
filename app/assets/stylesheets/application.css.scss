@@ -1,0 +1,88 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ */
+
+@import "font-awesome";
+
+@-webkit-viewport   { width: device-width; }
+@-moz-viewport      { width: device-width; }
+@-ms-viewport       { width: device-width; }
+@-o-viewport        { width: device-width; }
+@viewport           { width: device-width; }
+
+//
+// Social
+// -------------------------
+$facebook-color: #3b5998;
+$twitter-color: #00aced;
+$google-color: #e14b39;
+
+//
+// Branding
+// -------------------------
+$branding-dark-pink:  #b72655;
+$branding-pink:       #db3e62;
+$branding-light-pink: #f05972;
+$branding-green:      #1b7875;
+
+//
+// Navbar
+// -------------------------
+$navbar-default-color:               #fff;
+$navbar-default-bg:                  $branding-dark-pink; // #f8f8f8;
+$navbar-default-link-color:          #fff;
+$navbar-default-link-hover-color:    #fff;
+$navbar-default-link-active-color:   #fff;
+
+@import "bootstrap";
+
+body {
+	background-color: #f5f5f5;
+
+	> header {
+		margin-bottom: $jumbotron-padding;
+	}
+
+  > footer {
+    height: 200px;
+    background-color: $branding-dark-pink;
+  }
+}
+
+main#content {
+  margin-bottom: $jumbotron-padding;
+}
+
+div.jumbotron {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+div#social {
+  font-size: 2em;
+  padding: 10px 0;
+  background-color: #222;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid $branding-pink;
+
+  .icon-twitter {
+    color: $twitter-color;
+  }
+
+  .icon-facebook {
+    color: $facebook-color;
+  }
+
+  .icon-google-plus {
+    color: $google-color;
+  }
+}

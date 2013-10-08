@@ -1,0 +1,27 @@
+<% provide(:title, "Category | #{@category.name}") %>
+<% provide(:header, "Category: #{@category.name}") %>
+
+<div class="btn-toolbar">
+  <%= link_to "Index", admin_categories_path, class: "btn btn-info" %>
+  <%= link_to "Edit", edit_admin_category_path(@category), class: "btn btn-success" %>
+  <%= link_to 'Destroy', admin_category_path(@category), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+</div>
+
+<div style="clear:both;"></div>
+
+<p>
+    <strong>Id:</strong>
+    <%= @category.id %>
+  </p>
+  <p>
+    <strong>Name:</strong>
+    <%= @category.name %>
+  </p>
+  <p>
+    <strong>Permalink:</strong>
+    <%= @category.permalink %>
+  </p>
+  <p>
+    <strong>Description:</strong>
+    <%= @category.description %>
+  </p>

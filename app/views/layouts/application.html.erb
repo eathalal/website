@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Eat Halal</title>
+  <title>Eat Halal | <%= yield(:title) %></title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
@@ -20,17 +20,22 @@
 	<%= image_tag "logo.png" %>
 </header>
 
-<div class="jumbotron">
-  <div class="container">
-    <h1>Hello, world!</h1>
-    <p>...</p>
-    <p><a class="btn btn-primary btn-lg">Learn more</a></p>
-  </div>
+<div class="container">
+  <% flash.each do |key, value| %> 
+    <%= content_tag(:div, raw(value + ' <a class="close" data-dismiss="alert" href="#" aria-hidden="true">&times;</a>
+'), class: "alert alert-#{key}") %> 
+  <% end %>  
 </div>
 
-<main id="content" role="main">
-  <%= yield %>
-</main>
+<%= render "layouts/jumbotron" %>
+
+<div id="wrapper" class="container">
+
+  <main id="content" role="main" class="col-md-9">
+    <%= yield %>
+  </main>
+
+</div>
 
 <div id="social">
   <div class="container">

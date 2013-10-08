@@ -86,3 +86,12 @@ div#social {
     color: $google-color;
   }
 }
+
+div.btn-toolbar {
+  padding-bottom: 30px;
+  @extend .pull-right;
+}
+
+.alert-notice {
+  @extend .alert-warning;
+}

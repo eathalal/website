@@ -1,0 +1,10 @@
+<% provide(:title, "Category | New") %>
+<% provide(:header, "New Category") %>
+
+<div class="btn-toolbar">
+  <%= link_to "Index", admin_categories_path, class: "btn btn-info" %>
+</div>
+
+<div style="clear:both;"></div>
+
+<%= render 'form' %>

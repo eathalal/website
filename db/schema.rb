@@ -40,6 +40,8 @@ ActiveRecord::Schema.define(version: 20131009095210) do
   add_index "posts", ["permalink"], name: "index_posts_on_permalink", unique: true, using: :btree
 
   create_table "users", force: true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"

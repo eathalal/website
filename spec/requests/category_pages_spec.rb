@@ -12,6 +12,7 @@ describe "Category pages" do
     it "should have the right title" do
   		visit root_path
   		expect(page).to have_title("Eat Halal")
+      expect(page).to_not have_title("|")
 		end
   end
 end

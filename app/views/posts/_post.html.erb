@@ -1,18 +1,27 @@
-<article>
+<article class="post">
   <header>
     <p class="text-muted">
       <small>
-        <span class="glyphicon glyphicon-user"></span> By <em>Eat Halal</em>
-        <span class="glyphicon glyphicon-calendar"></span> <time datetime="<%= post.created_at %>" pubdate><%= time_ago_in_words(post.created_at) %> ago</time>
-        <span class="glyphicon glyphicon-comment"></span> 0 Comments
+        <span>
+          <span class="glyphicon glyphicon-user"></span> By <em>Eat Halal</em>
+        </span>
+        <span>
+          <span class="glyphicon glyphicon-calendar"></span> <time datetime="<%= post.created_at %>" pubdate><%= time_ago_in_words(post.created_at) %> ago</time>
+        </span>
+        <span>
+          <span class="glyphicon glyphicon-comment"></span> 0 Comments
+        </span>
       </small>
     </p>
     <h2><%= post.title %></h2>
   </header>
   <div class="body">
-    <%= post.content %>
+    <%= image_tag post.image_url.to_s, class: "img-responsive img-rounded" %>
+    <%= simple_format(post.content) %>
   </div>
   <footer>
-    
+    <div>
+      <span class="glyphicon glyphicon-tags"></span> example tag 
+    </div>
   </footer>
 </article>

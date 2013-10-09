@@ -10,6 +10,7 @@ describe Post do
   it { should respond_to :permalink }
   it { should respond_to :content }
   it { should respond_to :category }
+  it { should respond_to :image }
   it { should be_valid }
 
   # to_param

@@ -1,5 +1,8 @@
 class Post < ActiveRecord::Base
 
+  # uploaders
+  mount_uploader :image, ImageUploader
+
   # callbacks
   before_save { |post| post.permalink = title.parameterize }
 

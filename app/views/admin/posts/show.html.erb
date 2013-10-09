@@ -10,6 +10,11 @@
 <div style="clear:both;"></div>
 
 <p>
+  <strong>Image:</strong>
+  <%= image_tag @post.image_url(:medium).to_s %>
+</p>
+
+<p>
   <strong>Id:</strong>
   <%= @post.id %>
 </p>

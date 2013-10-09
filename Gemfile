@@ -13,6 +13,8 @@ gem 'jbuilder', '1.0.2'
 gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass'
 gem "font-awesome-rails"
 gem 'simple_form', github: 'plataformatec/simple_form'
+gem 'carrierwave'
+gem "rmagick"
 
 group :doc do
   gem 'sdoc','0.3.20', require: false

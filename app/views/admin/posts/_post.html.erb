@@ -1,5 +1,6 @@
 <tr>
   <td><%= link_to post.id, admin_post_path(post) %></td>
+  <td><%= image_tag post.image_url(:tiny).to_s %></td>
   <td><%= post.title %></td>
-  <td><%= post.content %></td>
+  <td><%= post.content.truncate(30) %></td>
 </tr>

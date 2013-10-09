@@ -1,0 +1,21 @@
+<% provide(:title, "Change your password") %>
+<% provide(:header, "Change your password") %>
+
+<%= simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>    
+
+  <div class="form-inputs">
+    <%= f.input :reset_password_token, :as => :hidden %>
+    <%= f.full_error :reset_password_token %>
+    <%= f.input :password, :label => "New password", :required => true, :autofocus => true %>
+    <%= f.input :password_confirmation, :label => "Confirm your new password", :required => true %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Change my password", class: "btn btn-primary" %>
+  </div>
+<% end %>
+
+<% content_for(:sidebar) do %>
+  <%= render "devise/shared/links" %>
+<% end %>

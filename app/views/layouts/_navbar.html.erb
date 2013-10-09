@@ -22,6 +22,15 @@
         <%= link_to "Admin", admin_categories_path %>
       </li>
     </ul>
-    <p class="navbar-right navbar-text">As Salaam Alaykum wa Rahmatullahi wa Barakatuhu!</p>
+    <% unless user_signed_in? %>
+      <%= link_to("Sign up", new_user_registration_path, class: "navbar-right btn btn-primary navbar-btn signup") %>
+      <%= link_to("Sign in", new_user_session_path, class: "navbar-right btn btn-default navbar-btn signin") %>
+    <% else %>
+      <%= link_to('Sign out', destroy_user_session_path, :method => :delete, class: "navbar-right btn btn-default navbar-btn") %>
+    <% end %>
+    
+    <p class="navbar-right navbar-text">
+      As Salaam Alaykum wa Rahmatullahi wa Barakatuhu<%= content_tag(:strong, " #{current_user.email}") if user_signed_in? %>!
+    </p>
   </div><!-- /.navbar-collapse -->
 </nav>

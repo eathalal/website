@@ -43,6 +43,12 @@
     <%= yield %>
   </main>
 
+  <% unless current_page?(root_url) %>
+    <div id="sidebar" class="col-md-3">
+      <%= content_for :sidebar %>
+    </div>
+  <% end %>
+
 </div>
 
 <div id="social">

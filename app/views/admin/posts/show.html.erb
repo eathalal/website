@@ -1,0 +1,31 @@
+<% provide(:title, "Post | #{@post.title}") %>
+<% provide(:header, "Post: #{@post.title}") %>
+
+<div class="btn-toolbar">
+  <%= link_to "Index", admin_posts_path, class: "btn btn-info" %>
+  <%= link_to "Edit", edit_admin_post_path(@post), class: "btn btn-success" %>
+  <%= link_to 'Destroy', admin_post_path(@post), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+</div>
+
+<div style="clear:both;"></div>
+
+<p>
+  <strong>Id:</strong>
+  <%= @post.id %>
+</p>
+<p>
+  <strong>Title:</strong>
+  <%= @post.title %>
+</p>
+<p>
+  <strong>Category:</strong>
+  <%= @post.category.name %>
+</p>
+<p>
+  <strong>Permalink:</strong>
+  <%= @post.permalink %>
+</p>
+<p>
+  <strong>Content:</strong>
+  <%= @post.content %>
+</p>

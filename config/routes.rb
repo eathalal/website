@@ -56,5 +56,6 @@ Website::Application.routes.draw do
   #   end
   namespace :admin do
     resources :categories
+    resources :posts
   end
 end

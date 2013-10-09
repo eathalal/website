@@ -1,0 +1,10 @@
+<% provide(:title, "Post | Edit #{@post.title}") %>
+
+<div class="btn-toolbar">
+  <%= link_to "Index", admin_posts_path, class: "btn btn-info" %> 
+  <%= link_to "Show", admin_post_path(@post), class: "btn btn-success" %>
+</div>
+
+<div style="clear:both;"></div>
+
+<%= render 'form' %>

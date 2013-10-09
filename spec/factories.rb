@@ -10,4 +10,9 @@ FactoryGirl.define do
     description "MyProductDescription"
   end
 
+  factory :post do
+    title "MyPostTitle"
+    content "MyPostContent"
+    category
+  end
 end

@@ -1,0 +1,10 @@
+<% provide(:title, "Post | New") %>
+<% provide(:header, "New Post") %>
+
+<div class="btn-toolbar">
+  <%= link_to "Index", admin_posts_path, class: "btn btn-info" %>
+</div>
+
+<div style="clear:both;"></div>
+
+<%= render 'form' %>

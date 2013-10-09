@@ -1,0 +1,21 @@
+<% provide(:title, "Posts") %>
+<% provide(:header, "Posts") %>
+
+<div class="btn-toolbar">
+  <%= link_to "New", new_admin_post_path, class: "btn btn-success" %>  
+</div>
+
+ <div style="clear:both;"></div>
+
+<% if @posts.any? %>
+  <table class="table">
+    <tr>
+      <th>#</th>
+      <th>Title</th>
+      <th>Content</th>
+    </tr>
+    <%= render @posts %>
+  </table>
+<% else %>
+  <p class="alert alert-info">No posts have been added.</p>
+<% end %>

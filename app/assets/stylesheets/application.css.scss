@@ -43,13 +43,19 @@ $navbar-default-link-color:          #fff;
 $navbar-default-link-hover-color:    #fff;
 $navbar-default-link-active-color:   #fff;
 
+//
+// Jumbotron
+// -------------------------
+$jumbotron-padding: 10px;
+
 @import "bootstrap";
+
 
 body {
 	background-color: #f5f5f5;
 
 	> header {
-		margin-bottom: $jumbotron-padding;
+		margin-bottom: 20px;
 	}
 
   > footer {
@@ -65,6 +71,11 @@ main#content {
 div.jumbotron {
   border-top: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
+  background-image: url(texture.jpg);
+
+  h1 {
+    font-size: 2em;
+  }
 }
 
 div#social {

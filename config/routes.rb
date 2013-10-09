@@ -1,4 +1,6 @@
 Website::Application.routes.draw do
+  get "posts/index"
+  get "posts/show"
   get "categories/index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -11,6 +13,9 @@ Website::Application.routes.draw do
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
+
+  # posts
+  get 'on-the-block' => 'posts#index', as: :blog
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products

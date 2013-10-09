@@ -22,13 +22,7 @@
       <%= image_tag "logo.png" %>
     </div>
     <div class="col-md-6">
-      <nav>
-        <ul class="nav nav-pills">
-          <li class="active"><%= link_to "Categories", admin_categories_path %></li>
-          <li><%= link_to "Posts", admin_posts_path %></li>
-
-        </ul>
-      </nav>      
+      <%= render "layouts/section_nav" %>    
     </div>
   </div>
 	

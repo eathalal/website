@@ -12,10 +12,15 @@
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav navbar-nav">
-      <li class="active">
+      <li<%=  params['controller'] == 'categories' && action_name == 'index' ? ' class="active"'.html_safe : '' %>>
         <%= link_to '<span class="glyphicon glyphicon-home"></span>'.html_safe, root_path %>
       </li>
-      <li><a href="#">On The Block</a></li>
+      <li<%=  params['controller'] == 'posts' ? ' class="active"'.html_safe : '' %>>
+        <%= link_to "On The Block", blog_path %>
+      </li>
+      <li<%=  params["controller"].starts_with?('admin') ? ' class="active"'.html_safe : '' %>>
+        <%= link_to "Admin", admin_categories_path %>
+      </li>
     </ul>
     <p class="navbar-right navbar-text">As Salaam Alaykum wa Rahmatullahi wa Barakatuhu!</p>
   </div><!-- /.navbar-collapse -->

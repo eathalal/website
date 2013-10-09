@@ -1,0 +1,8 @@
+<nav>
+  <ul class="nav nav-pills">
+    <% if params["controller"].starts_with?('admin') %>
+      <li class="active"><%= link_to "Categories", admin_categories_path %></li>
+      <li><%= link_to "Posts", admin_posts_path %></li>
+    <% end %>
+  </ul>
+</nav>

@@ -1,0 +1,49 @@
+<% provide(:title, "User | #{@user.full_name}") %>
+<% provide(:header, "User: #{@user.full_name}") %>
+
+<div class="btn-toolbar">
+  <%= link_to "Index", admin_posts_path, class: "btn btn-info" %>
+</div>
+
+<div style="clear:both;"></div>
+
+<p>
+  <strong>Id:</strong>
+  <%= @user.id %>
+</p>
+<p>
+  <strong>Full Name:</strong>
+  <%= @user.full_name %>
+</p>
+<p>
+  <strong>Email Address:</strong>
+  <%= @user.email %>
+</p>
+
+<% if @user.posts.any? %>
+<section>
+  <header>
+    <h2>Posts</h2>
+  </header>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Image</th>
+        <th>Title</th>
+        <th>Content</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @user.posts.each do |post| %>
+        <tr>
+          <td><%= link_to post.id, admin_post_path(post) %></td>
+          <td><%= image_tag post.image_url(:tiny).to_s %></td>
+          <td><%= post.title %></td>
+          <td><%= post.content.truncate(30) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</section>
+<% end %>

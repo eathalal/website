@@ -1,0 +1,16 @@
+<% provide(:title, "Users") %>
+<% provide(:header, "Users") %>
+
+<% if @users.any? %>
+  <table class="table">
+    <tr>
+      <th>#</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+    </tr>
+    <%= render @users %>
+  </table>
+<% else %>
+  <p class="alert alert-info">No users have been added.</p>
+<% end %>

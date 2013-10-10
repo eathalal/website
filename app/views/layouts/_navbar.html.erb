@@ -30,7 +30,7 @@
     <% end %>
     
     <p class="navbar-right navbar-text">
-      As Salaam Alaykum wa Rahmatullahi wa Barakatuhu<%= content_tag(:strong, " #{current_user.email}") if user_signed_in? %>!
+      As Salaam Alaykum wa Rahmatullahi wa Barakatuhu<%= content_tag(:strong, " #{current_user.full_name}") if user_signed_in? %>!
     </p>
   </div><!-- /.navbar-collapse -->
 </nav>

@@ -1,10 +1,14 @@
 require 'spec_helper'
+include Warden::Test::Helpers
+Warden.test_mode!
 
-feature "Admin adds a new post" do
-  let!(:category) { FactoryGirl.create(:category) }
-
-  background do 
-    # login admin
+feature "adding a new post" do
+  given(:category) { FactoryGirl.create(:category) }
+  given(:user)     { FactoryGirl.create(:user) }
+ 
+  background do
+    category 
+    sign_in user # should be an admin rather than normal user.
     visit new_admin_post_path
   end
 

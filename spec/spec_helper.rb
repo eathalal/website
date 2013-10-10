@@ -47,6 +47,7 @@ Spork.prefork do
     config.order = "random"
 
     config.include Capybara::DSL
+
   end
 
 end

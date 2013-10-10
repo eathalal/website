@@ -6,7 +6,11 @@ describe User do
     email: "fulanibnfulan@example.com", password: "secrettt", password_confirmation: "secrettt") }
   subject { @user }
 
+  it { should respond_to :posts }
   it { should be_valid }
+
+  # full name
+  specify { @user.full_name.should eq("Fulan Ibn Fulan") }
 
   # First Name
   describe "when first name is not present" do

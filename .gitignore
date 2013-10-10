@@ -20,3 +20,4 @@ doc/
 .secret
 eathalal-website.sublime-project
 eathalal-website.sublime-workspace
+/public/uploads

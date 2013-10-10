@@ -3,7 +3,7 @@
     <p class="text-muted">
       <small>
         <span>
-          <span class="glyphicon glyphicon-user"></span> By <em>Eat Halal</em>
+          <span class="glyphicon glyphicon-user"></span> By <em><%= post.user.full_name %></em>
         </span>
         <span>
           <span class="glyphicon glyphicon-calendar"></span> <time datetime="<%= post.created_at %>" pubdate><%= time_ago_in_words(post.created_at) %> ago</time>

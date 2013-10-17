@@ -4,5 +4,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    @category = Category.where(permalink: params[:category]).first
+    @post = @category.posts.where(permalink: params[:permalink]).first
   end
 end

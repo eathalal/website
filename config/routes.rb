@@ -1,8 +1,7 @@
 Website::Application.routes.draw do
+  # devise
   devise_for :users
-  get "posts/index"
-  get "posts/show"
-  get "categories/index"
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -17,6 +16,8 @@ Website::Application.routes.draw do
 
   # posts
   get 'on-the-block' => 'posts#index', as: :blog
+  get 'on-the-block/:category/:permalink' => 'posts#show', as: :post
+
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products

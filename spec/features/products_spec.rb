@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 feature "Admin adds a new product" do
+  given!(:category) { FactoryGirl.create(:category) }
   given(:admin) { FactoryGirl.create(:admin) }
   background do 
     sign_in admin
@@ -8,6 +9,7 @@ feature "Admin adds a new product" do
   end
 
   scenario "with valid information" do
+    select category.name,  from: "Category"
     fill_in "Name",        with: "Name"
     fill_in "Description", with: "MyDescription"
     fill_in "Price",       with: 1.00

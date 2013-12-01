@@ -9,6 +9,7 @@ describe Category do
   it { should respond_to :name }
   it { should respond_to :permalink }
   it { should respond_to :description }
+  it { should respond_to :products }
   it { should be_valid }
 
   # to_param

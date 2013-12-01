@@ -1,0 +1,28 @@
+<% provide(:title, "Price List") %>
+<% provide(:header, "Price List") %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Category</th>
+    </tr>
+  </thead>
+  <tfoot>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Category</th>
+    </tr>
+  </tfoot>
+  <tbody>
+    <% @products.each do |p| %>
+      <tr>
+        <td><%= p.name %></td>
+        <td><%= number_to_currency(p.price, unit: "£") %>/KG</td>
+        <td><%= p.category.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

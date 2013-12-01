@@ -21,6 +21,8 @@ Website::Application.routes.draw do
   # get 'on-the-block/:category/:permalink/comments' => 'comments#index'
   # get 'on-the-block/:category/:permalink/comments/new' => 'comments#new', as: :post_comment
 
+  resources :prices
+
   # resources :posts do
   #   resources :comments
   # end

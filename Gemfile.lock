@@ -1,4 +1,10 @@
 GIT
+  remote: git://github.com/bmabey/database_cleaner.git
+  revision: 733849482546297c48f97b292cf3ad4e498eaad0
+  specs:
+    database_cleaner (1.2.0)
+
+GIT
   remote: git://github.com/plataformatec/simple_form.git
   revision: 50c4ac4a8bd0cb883ddaa309b779978e4207fef4
   specs:
@@ -224,6 +230,7 @@ DEPENDENCIES
   carrierwave
   childprocess (= 0.3.6)
   coffee-rails (= 4.0.0)
+  database_cleaner!
   devise
   factory_girl_rails
   font-awesome-rails

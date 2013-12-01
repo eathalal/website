@@ -20,9 +20,13 @@ FactoryGirl.define do
   factory :user do
     first_name "FirstName"
     last_name "LastName"
-    email "email@address.com"
+    sequence(:email) {|n| "user#{n}@example.com" }
     password "password"
     password_confirmation "password"
     confirmed_at Time.zone.now
+
+    factory :admin do
+      admin true
+    end
   end
 end

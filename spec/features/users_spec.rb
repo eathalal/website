@@ -1,15 +1,17 @@
 require 'spec_helper'
+include Warden::Test::Helpers
+Warden.test_mode!
 
 feature "Admin views users" do
-  given(:user) { FactoryGirl.create(:user) }
+  given(:user)  { FactoryGirl.create(:user) }
+  given(:admin) { FactoryGirl.create(:admin) }
+  background { sign_in admin }
 
-  # background { login admin }
-
-  scenario "index with no categories" do
-    visit admin_users_path
-    expect(page).to have_title "Eat Halal | Users"
-    expect(page).to have_text "No users have been added."
-  end
+  # scenario "index with no categories" do
+  #   visit admin_users_path
+  #   expect(page).to have_title "Eat Halal | Users"
+  #   expect(page).to have_text "No users have been added."
+  # end
 
   scenario "index with one user" do
     user

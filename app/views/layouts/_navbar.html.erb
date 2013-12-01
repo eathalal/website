@@ -18,9 +18,11 @@
       <li<%=  params['controller'] == 'posts' ? ' class="active"'.html_safe : '' %>>
         <%= link_to "On The Block", blog_path %>
       </li>
+      <% if allow?('admin', 'index') %>
       <li<%=  params["controller"].starts_with?('admin') ? ' class="active"'.html_safe : '' %>>
         <%= link_to "Admin", admin_categories_path %>
       </li>
+      <% end %>
     </ul>
     <% unless user_signed_in? %>
       <%= link_to("Sign up", new_user_registration_path, class: "navbar-right btn btn-primary navbar-btn signup") %>

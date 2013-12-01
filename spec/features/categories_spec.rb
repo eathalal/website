@@ -1,8 +1,9 @@
 require 'spec_helper'
 
 feature "Admin adds a new category" do
+  given(:admin) { FactoryGirl.create(:admin) }
   background do 
-    # login admin
+    sign_in admin
     visit new_admin_category_path
   end
 
@@ -24,8 +25,10 @@ end
 
 feature "Admin edits a category" do
   given(:category) { FactoryGirl.create(:category) }
+  given(:admin) { FactoryGirl.create(:admin) }
+
   background do
-    # login admin
+    sign_in admin
     visit edit_admin_category_path(category)
   end
 
@@ -48,8 +51,9 @@ end
 
 feature "Admin views category index" do
   given(:category) { FactoryGirl.create(:category) }
+  given(:admin) { FactoryGirl.create(:admin) }
 
-  # background { login admin }
+  background { sign_in admin }
 
   scenario "with no categories" do
     visit admin_categories_path
@@ -68,9 +72,11 @@ feature "Admin views category index" do
 end
 
 feature "Admin deletes a category" do
-  given!(:category) { FactoryGirl.create(:category) }
+  given(:category) { FactoryGirl.create(:category) }
+  given(:admin) { FactoryGirl.create(:admin) }
+
   background do
-    # login admin
+    sign_in admin
     visit admin_category_path(category)
   end
 

@@ -18,6 +18,12 @@ RSpec::Matchers.define :have_notice_message do |message|
   end
 end
 
+RSpec::Matchers.define :allow do |*args|
+  match do |permission|
+    permission.allow?(*args).should be_true
+  end
+end
+
 def sign_in(user)
   visit new_user_session_path
   fill_in "Email", with: user.email

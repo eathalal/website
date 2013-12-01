@@ -8,9 +8,11 @@
         <span>
           <span class="glyphicon glyphicon-calendar"></span> <time datetime="<%= post.created_at %>" pubdate><%= time_ago_in_words(post.created_at) %> ago</time>
         </span>
+        <!--
         <span>
           <span class="glyphicon glyphicon-comment"></span> 0 Comments
         </span>
+        -->
       </small>
     </p>
     <h2><%= link_to post.title, post_path(post.category.permalink, post.permalink) %></h2>

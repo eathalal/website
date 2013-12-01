@@ -8,6 +8,7 @@ FactoryGirl.define do
   factory :product do
     name "MyProductName"
     description "MyProductDescription"
+    price 1.00
   end
 
   factory :post do

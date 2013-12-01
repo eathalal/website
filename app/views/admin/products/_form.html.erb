@@ -1,0 +1,7 @@
+<%= simple_form_for([ :admin, @product]) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>    
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :price %>
+  <%= f.button :submit, class: "btn btn-primary" %>
+<% end %>

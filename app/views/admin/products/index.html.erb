@@ -1,0 +1,22 @@
+<% provide(:title, "Products") %>
+<% provide(:header, "Products") %>
+
+<div class="btn-toolbar">
+  <%= link_to "New", new_admin_product_path, class: "btn btn-success" %>  
+</div>
+
+ <div style="clear:both;"></div>
+
+<% if @products.any? %>
+  <table class="table">
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Price</th>
+    </tr>
+    <%= render @products %>
+  </table>
+<% else %>
+  <p class="alert alert-info">No products have been added.</p>
+<% end %>

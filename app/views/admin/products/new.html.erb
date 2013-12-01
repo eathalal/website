@@ -1,0 +1,10 @@
+<% provide(:title, "Product | New") %>
+<% provide(:header, "New Product") %>
+
+<div class="btn-toolbar">
+  <%= link_to "Index", admin_products_path, class: "btn btn-info" %>
+</div>
+
+<div style="clear:both;"></div>
+
+<%= render 'form' %>

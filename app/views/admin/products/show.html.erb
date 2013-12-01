@@ -1,0 +1,27 @@
+<% provide(:title, "Product | #{@product.name}") %>
+<% provide(:header, "Product: #{@product.name}") %>
+
+<div class="btn-toolbar">
+  <%= link_to "Index", admin_products_path, class: "btn btn-info" %>
+  <%= link_to "Edit", edit_admin_product_path(@product), class: "btn btn-success" %>
+  <%= link_to 'Destroy', admin_product_path(@product), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+</div>
+
+<div style="clear:both;"></div>
+
+<p>
+    <strong>Id:</strong>
+    <%= @product.id %>
+  </p>
+  <p>
+    <strong>Name:</strong>
+    <%= @product.name %>
+  </p>
+  <p>
+    <strong>Permalink:</strong>
+    <%= @product.permalink %>
+  </p>
+  <p>
+    <strong>Description:</strong>
+    <%= @product.description %>
+  </p>

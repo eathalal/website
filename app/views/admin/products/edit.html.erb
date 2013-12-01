@@ -1,0 +1,10 @@
+<% provide(:title, "Product | Edit #{@product.name}") %>
+
+<div class="btn-toolbar">
+  <%= link_to "Index", admin_products_path, class: "btn btn-info" %> 
+  <%= link_to "Show", admin_product_path(@product), class: "btn btn-success" %>
+</div>
+
+<div style="clear:both;"></div>
+
+<%= render 'form' %>

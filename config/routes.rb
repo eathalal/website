@@ -72,5 +72,6 @@ Website::Application.routes.draw do
     resources :categories
     resources :posts
     resources :users
+    resources :products
   end
 end

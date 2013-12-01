@@ -15,16 +15,16 @@ describe Product do
   it { should be_valid }
 
   # to_param
-  # describe "to_param" do
-  #   before { @product.save }
-  #   specify { @product.to_param.should eq "beef" }
-  # end
+  describe "to_param" do
+    before { @product.save }
+    specify { @product.to_param.should eq "beef" }
+  end
 
-  # # Permalink  
-  # describe "permalink" do
-  #   before { @product.save }
-  #   specify { @product.permalink.should eq "beef" }
-  # end
+  # Permalink  
+  describe "permalink" do
+    before { @product.save }
+    specify { @product.permalink.should eq "beef" }
+  end
 
   # Name
   describe "when name is not present" do

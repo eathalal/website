@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 20131201135136) do
 
   create_table "products", force: true do |t|
     t.string   "name"
+    t.string   "permalink"
     t.text     "description"
     t.decimal  "price",       precision: 8, scale: 2, default: 0.0
     t.integer  "category_id"
@@ -61,6 +62,7 @@ ActiveRecord::Schema.define(version: 20131201135136) do
   end
 
   add_index "products", ["category_id"], name: "index_products_on_category_id", using: :btree
+  add_index "products", ["permalink"], name: "index_products_on_permalink", unique: true, using: :btree
 
   create_table "users", force: true do |t|
     t.string   "first_name"

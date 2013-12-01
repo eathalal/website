@@ -9,6 +9,7 @@ class Post < ActiveRecord::Base
   # relationships
   belongs_to :category
   belongs_to :user
+  has_many :comments, as: :commentable
 
   # validations
   validates :title, presence: true, length: { maximum: 150 }, uniqueness: { case_sensitive: false }

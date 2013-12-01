@@ -17,6 +17,12 @@ Website::Application.routes.draw do
   # posts
   get 'on-the-block' => 'posts#index', as: :blog
   get 'on-the-block/:category/:permalink' => 'posts#show', as: :post
+  get 'on-the-block/:category/:permalink/comments' => 'comments#index'
+  get 'on-the-block/:category/:permalink/comments/new' => 'comments#new', as: :post_comment
+
+  resources :posts do
+    resources :comments
+  end
 
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
